@@ -1,0 +1,109 @@
+.color-picker {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.color-button-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.color-button-toggle.selected-green {
+  background-color: #4CAF50;
+}
+
+.color-button-toggle.selected-orange {
+  background-color: #FF9800;
+}
+
+.color-button-toggle.selected-red {
+  background-color: #F44336;
+}
+
+.color-button-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  display: flex;
+  gap: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+}
+
+
+.color-picker-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+}
+.color-circle-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px 6px;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 680px) { 
+
+
+
+.color-button-dropdown {
+flex-direction: column;
+}
+
+.color-picker-wrapper {
+  margin-left: 0;
+  display: block;
+}
+
+}

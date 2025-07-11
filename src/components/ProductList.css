@@ -1,0 +1,125 @@
+/* .product-list section {
+  margin-bottom: 2em;
+}
+
+.product-list h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.product-list h4 {
+  margin-left: 20px;
+  color: #777;
+}
+
+.product-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.product-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product-list li span {
+  flex-grow: 1;
+  padding-left: 10px;
+  color: #222;
+} */
+
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+  color: #4a90e2;
+  transition: all 0.3s ease ;
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.icon-button.delete {
+  color: #e94e4e;
+  margin-left: 8px;
+}
+
+.icon-button:hover {
+  color: #1c5dbf;
+}
+
+.icon-button.delete:hover {
+  color: #b32b2b;
+}
+
+.reaction-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-left: center;
+}
+
+.reaction-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  font-size: 16px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+
+.reaction-button:active {
+  transform: scale(0.9);
+}
+
+.reaction-button:hover {
+  transform: scale(1.1);
+}
+
+.reaction-emoji {
+  pointer-events: none;
+}
+
+
+/* Плавные анимации */
+
+
+/* Анимация появления */
+/* .fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.3s forwards;
+  
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+
+/* Реакции — анимация нажатия */
+
+
+
+
+

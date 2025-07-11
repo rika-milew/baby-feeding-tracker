@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  line-height: 1.5;
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.App {
+ max-width: 800px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+h1 {
+  font-size: 32px;
+   color: #333;
+   margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+  color: #333;
+   margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+
+}
+
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  background-color: #fff;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+
+input {
+  width: 30%;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+ 
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+select {
+ 
+  width: 22%;
+
+}
+
+
+
+form button {
+  width: 20%;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+   margin-bottom: 10px;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+
+.cancel-button {
+  margin-left: 10px;
+  background-color: #ccc;
+}
+
+@media screen and (max-width: 950px) { 
+
+
+.App {
+ width: 77%;
+ 
+}
+
+}
+
+
+@media screen and (max-width: 900px) { 
+
+
+.App {
+ width: 80%;
+ 
+}
+
+}
+
+
+@media screen and (max-width: 840px) { 
+
+
+.App {
+ width: 85%;
+ 
+}
+
+}
+
+
+@media screen and (max-width: 750px) { 
+
+
+.App {
+ width: 90%;
+ 
+}
+
+}
+
+
+
+
+
+@media screen and (max-width: 680px) { 
+
+
+.App {
+ width: 95%;
+ 
+}
+
+h1 {
+ font-size: 28px;
+ 
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input, select, form button {
+  width: 100%;
+
+}
+
+.cancel-button {
+  
+margin-left: 0;
+}
+
+
+
+ span {
+  font-size: 14px;
+}
+
+
+}
