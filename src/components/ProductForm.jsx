@@ -21,22 +21,36 @@ export function ProductForm({ onAdd, editingProduct, onSaveEdit, onCancelEdit })
     }
   }, [editingProduct]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!name.trim()) return alert('Введите название продукта');
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const productData = { name, category, ageGroup };
+  if (!name.trim()) {
+    alert('Введите название продукта');
+    return;
+  }
 
-    if (editingProduct) {
-      onSaveEdit({ ...editingProduct, ...productData });
-    } else {
-      onAdd(productData);
-    }
+  const maxWordLength = 12;
+  const words = name.trim().split(/\s+/); // разделяем по пробелам
 
-    if (!editingProduct) {
-      setName('');
-    }
-  };
+  const tooLongWord = words.find(word => word.length > maxWordLength);
+
+  if (tooLongWord) {
+    alert(`Слово "${tooLongWord}" слишком длинное. Максимум ${maxWordLength} символов на слово.`);
+    return;
+  }
+
+  const productData = { name, category, ageGroup };
+
+  if (editingProduct) {
+    onSaveEdit({ ...editingProduct, ...productData });
+  } else {
+    onAdd(productData);
+  }
+
+  if (!editingProduct) {
+    setName('');
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>

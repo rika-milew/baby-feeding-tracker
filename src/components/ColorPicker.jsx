@@ -30,7 +30,7 @@ export function ColorPicker({ value, onChange }) {
   };
 
   return (
-    <div ref={ref} style={{ position: 'relative', display: 'inline-block', marginLeft: 12 }}>
+    <div ref={ref} className="color-button" style={{ position: 'relative', display: 'inline-block' }}>
       {/* Кнопка: текущий цвет или пустой кружок */}
       <button
         type="button"

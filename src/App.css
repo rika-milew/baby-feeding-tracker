@@ -103,6 +103,30 @@ form button:hover {
   background-color: #ccc;
 }
 
+.age-section {
+  margin-left: 20px;
+}
+
+.product-item {
+
+
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     padding: 6px 0;
+     border-bottom: 1px solid #ddd;
+     position: relative;
+                  
+}
+
+.checked-button {
+vertical-align: middle;
+display: inline-block;
+ appearance: none;
+ flex-shrink: 0;
+}
+
+
 @media screen and (max-width: 950px) { 
 
 
@@ -136,6 +160,10 @@ form button:hover {
 }
 
 
+
+
+
+
 @media screen and (max-width: 750px) { 
 
 
@@ -143,6 +171,12 @@ form button:hover {
  width: 90%;
  
 }
+
+.age-section {
+  margin-left: 0;
+}
+
+
 
 }
 
@@ -187,5 +221,53 @@ margin-left: 0;
   font-size: 14px;
 }
 
+
+}
+
+
+@media screen and (max-width: 650px) {  
+.App {
+ width: 95%;
+}
+
+
+.product-item {
+  gap: 6px;
+}
+
+}
+
+
+@media screen and (max-width: 550px) {  
+
+h1 {
+ font-size: 26px;
+ line-height: 32px;
+ 
+}
+
+
+h2 {
+ font-size: 22px;
+line-height: 26px;
+ 
+}
+
+}
+
+@media screen and (max-width: 420px) {  
+.App {
+ width: 100%;
+}
+
+
+.product-item {
+  gap: 3px;
+}
+
+
+.span {
+  font-size: 12px;
+}
 
 }

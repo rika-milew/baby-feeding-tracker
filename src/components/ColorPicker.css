@@ -4,6 +4,11 @@
   margin-left: 12px;
 }
 
+
+.color-button {
+  margin-left: 12px;
+}
+
 .color-button-toggle {
   width: 24px;
   height: 24px;
@@ -49,7 +54,7 @@
   display: inline-block;
   margin-left: 12px;
 }
-.color-circle-button {
+.color-circle-button, .circle-button {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -104,6 +109,26 @@ flex-direction: column;
 .color-picker-wrapper {
   margin-left: 0;
   display: block;
+}
+
+}
+
+@media screen and (max-width: 420px) {  
+
+.color-button {
+  margin-left: 5px;
+} 
+
+.color-button-toggle {
+  width: 22px;
+  height: 22px;
+
+}
+
+
+span {
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 }
