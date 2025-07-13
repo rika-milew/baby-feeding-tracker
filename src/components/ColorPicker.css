@@ -68,6 +68,10 @@
   font-size: 18px;
 }
 
+.circle-button {
+ margin: 0 2px;
+}
+
 
 .tooltip-wrapper {
   position: relative;

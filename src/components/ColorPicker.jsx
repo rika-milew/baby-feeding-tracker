@@ -76,7 +76,7 @@ export function ColorPicker({ value, onChange }) {
             type="button"
             onClick={() => handleSelect(null)}
             aria-label="Очистить цвет"
-            className="color-circle-button"
+            className="circle-button"
             style={{ backgroundColor: 'transparent', borderColor: '#555' }}
           >
             ×

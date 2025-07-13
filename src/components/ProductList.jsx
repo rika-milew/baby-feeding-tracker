@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiEdit, FiTrash2, FiCheck } from 'react-icons/fi';
 import './ProductList.css';
 import { ColorPicker } from './ColorPicker';
@@ -22,6 +22,7 @@ const colorMarks = {
 
 export function ProductList({ products, onDelete, onEditClick, onUpdate }) {
   const [openReactionId, setOpenReactionId] = useState(null);
+  const menuRef = useRef(null);
 
 const [isMobile, setIsMobile] = useState(false);
 
@@ -33,6 +34,22 @@ useEffect(() => {
   window.addEventListener('resize', checkMobile);
   return () => window.removeEventListener('resize', checkMobile);
 }, []);
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setOpenReactionId(null);
+    }
+  };
+
+  if (openReactionId !== null) {
+    document.addEventListener('mousedown', handleClickOutside);
+  }
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [openReactionId]);
 
   const groupedByCategory = products.reduce((acc, product) => {
     if (!acc[product.category]) acc[product.category] = {};
@@ -62,7 +79,9 @@ useEffect(() => {
       {Object.entries(groupedByCategory).map(([category, ageGroups]) => (
         <section key={category} style={{ marginBottom: '1.5em' }}>
           <h3>{category}</h3>
-          {Object.entries(ageGroups).map(([ageGroup, products]) => (
+          {Object.entries(ageGroups)
+  .sort(([a], [b]) => a.localeCompare(b, 'ru', { numeric: true }))
+  .map(([ageGroup, products]) => (
             <div key={ageGroup} className="age-section" style={{ marginBottom: '1em' }}>
               <h4>{ageGroup}</h4>
               <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -132,9 +151,10 @@ useEffect(() => {
     {/* Выпадающее меню с реакциями и кнопкой очистки */}
     {openReactionId === product.id && (
       <div className="open-reaction"
-       
+        ref={menuRef}
       >
         {reactionOptions.map(({ id, emoji, label, color }) => (
+             <div key={id} className="reaction-title">
           <button 
             key={id}
             onClick={() => {
@@ -154,17 +174,19 @@ useEffect(() => {
           >
             {emoji}
           </button>
+           <span style={{ fontSize: '12px', color: '#333' }}>{label}</span>
+          </div>
         ))}
 
         {/* Кнопка очистки выбранной реакции */}
-        
+        <div className="reaction-title">
           <button
            onClick={() => {
             toggleReaction(product, null); // сбрасываем реакцию
             setOpenReactionId(null);       // закрываем меню
           }}
             aria-label="Очистить реакцию"
-            className="color-circle-button"
+            className="circle-button"
             style={{
               backgroundColor: 'transparent',
               borderColor: '#555',
@@ -173,12 +195,15 @@ useEffect(() => {
           >
             ×
           </button>
+          <span style={{ fontSize: '12px', color: '#333' }}>Очистить</span>
+          </div>
       </div>
     )}
   </div>
   ) : (
     <div style={{ display: 'flex', gap: 6 }}>
       {reactionOptions.map(({ id, emoji, label, color }) => (
+        <Tooltip key={id} text={label}>
         <button
           key={id}
           onClick={() => toggleReaction(product, id)}
@@ -195,6 +220,7 @@ useEffect(() => {
         >
           {emoji}
         </button>
+        </Tooltip>
       ))}
       
     </div>
