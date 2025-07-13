@@ -129,7 +129,7 @@ border-radius: 6px;
 padding: 6px 4px;
 display: flex;
  flex-direction: column;
- gap: 9px;
+ gap: 8px;
  z-index: 100;
       
 }

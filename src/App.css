@@ -232,7 +232,7 @@ margin-left: 0;
 
 
 .product-item {
-  gap: 6px;
+  gap: 7px;
 }
 
 }
@@ -262,12 +262,15 @@ line-height: 26px;
 
 
 .product-item {
-  gap: 3px;
+  gap: 4px;
 }
 
 
-.span {
+
+
+}
+@media screen and (max-width: 350px) {  
+
+span {
   font-size: 12px;
-}
-
-}
+} }
