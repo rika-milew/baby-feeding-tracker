@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/baby-feeding-tracker/static/css/main.402dd0f7.css",
-    "main.js": "/baby-feeding-tracker/static/js/main.d3717e67.js",
+    "main.css": "/baby-feeding-tracker/static/css/main.c8589ea8.css",
+    "main.js": "/baby-feeding-tracker/static/js/main.7743a26c.js",
     "static/js/453.e23fb808.chunk.js": "/baby-feeding-tracker/static/js/453.e23fb808.chunk.js",
     "static/media/background.jpg": "/baby-feeding-tracker/static/media/background.233d43de5b8a91e2a13b.jpg",
     "index.html": "/baby-feeding-tracker/index.html",
-    "main.402dd0f7.css.map": "/baby-feeding-tracker/static/css/main.402dd0f7.css.map",
-    "main.d3717e67.js.map": "/baby-feeding-tracker/static/js/main.d3717e67.js.map",
+    "main.c8589ea8.css.map": "/baby-feeding-tracker/static/css/main.c8589ea8.css.map",
+    "main.7743a26c.js.map": "/baby-feeding-tracker/static/js/main.7743a26c.js.map",
     "453.e23fb808.chunk.js.map": "/baby-feeding-tracker/static/js/453.e23fb808.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.402dd0f7.css",
-    "static/js/main.d3717e67.js"
+    "static/css/main.c8589ea8.css",
+    "static/js/main.7743a26c.js"
   ]
 }
