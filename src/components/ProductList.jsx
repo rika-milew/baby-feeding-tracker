@@ -7,18 +7,15 @@ import { motion } from 'framer-motion';
 
 
 const reactionOptions = [
+  { id: 'adore', label: 'Супер', emoji: '😍', color: '#ca2a97ff' },
   { id: 'like', label: 'Понравилось', emoji: '👍', color: '#4CAF50' },
-  { id: 'dislike', label: 'Не понравилось', emoji: '👎', color: '#F44336' },
+  { id: 'dislike', label: 'Не нравится', emoji: '👎', color: '#F44336' },
   { id: 'unsure', label: 'Не уверен', emoji: '🤔', color: '#FF9800' },
 ];
 
 
 
-const colorMarks = {
-  green: '#4CAF50',
-  orange: '#FF9800',
-  red: '#F44336',
-};
+
 
 export function ProductList({ products, onDelete, onEditClick, onUpdate }) {
   const [openReactionId, setOpenReactionId] = useState(null);
@@ -154,13 +151,13 @@ useEffect(() => {
         ref={menuRef}
       >
         {reactionOptions.map(({ id, emoji, label, color }) => (
-             <div key={id} className="reaction-title">
-          <button 
-            key={id}
-            onClick={() => {
+             <div key={id} className="reaction-title" onClick={() => {
               toggleReaction(product, id);
               setOpenReactionId(null);
-            }}
+            }}>
+          <button 
+            
+            
             style={{
               backgroundColor: product.reaction === id ? color : '#eee',
               border: 'none',
@@ -179,12 +176,12 @@ useEffect(() => {
         ))}
 
         {/* Кнопка очистки выбранной реакции */}
-        <div className="reaction-title">
-          <button
-           onClick={() => {
+        <div className="reaction-title" onClick={() => {
             toggleReaction(product, null); // сбрасываем реакцию
             setOpenReactionId(null);       // закрываем меню
-          }}
+          }}>
+          <button
+           
             aria-label="Очистить реакцию"
             className="circle-button"
             style={{
@@ -205,7 +202,7 @@ useEffect(() => {
       {reactionOptions.map(({ id, emoji, label, color }) => (
         <Tooltip key={id} text={label}>
         <button
-          key={id}
+          
           onClick={() => toggleReaction(product, id)}
           style={{
             backgroundColor: product.reaction === id ? color : '#eee',
